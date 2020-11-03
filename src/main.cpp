@@ -1,9 +1,12 @@
 #include <iostream>
+#include "Board.h"
 
+using namespace TheRoyalFamily;
 
 int main()
 {
-	std::cout << "Szach mat!";
+	Board board;
+	board.print();
 
 	return 0;
 }
