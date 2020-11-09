@@ -1,24 +1,29 @@
-﻿#pragma once
+﻿/*	
+	Utility functions (like editing console)
+*/
+
+#pragma once
 #include <string>
 #include <windows.h>
+
 
 namespace TheRoyalFamily
 {
 	class Utility
 	{
 	public:
-		static void SetCursorPiece(Piece* p)
+		static void SetCursorPiece(const Piece* p)
 		{
 			COORD c;
-			c.X = p->getRank() - 'A' + 2;
-			c.Y = p->getFile() - 1;
+			c.X = (p->getFile() - 'A' + 1) * 2;
+			c.Y = 8 - p->getRank();
 			SetConsoleCursorPosition(GetStdHandle(STD_OUTPUT_HANDLE), c);
 		}
-		static void SetWhiteText(void)		// with red background
+		static void SetWhiteText(void)		// with aqua background
 		{
 			SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), 63);
 		}
-		static void SetBlackText(void)		// with red background
+		static void SetBlackText(void)		// with aqua background
 		{
 			SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), 48);
 		}

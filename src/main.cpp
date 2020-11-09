@@ -8,7 +8,7 @@ using namespace TheRoyalFamily;
 
 int main()
 {
-	system("Color 30");		// set red background
+	system("Color 30");		// set aqua background
 
 	Board board;
 	board.print();

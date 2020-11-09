@@ -5,23 +5,23 @@
 #include "Piece.h"
 #include "Pawn.h"
 
-using std::vector;
 
 namespace TheRoyalFamily
 {
 	class Board
 	{
 	private:
-		const vector<char> files{ 'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H' };
-		const vector<int> ranks{ 1, 2, 3, 4, 5, 6, 7, 8 };
+		const std::vector<char> files{ 'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H' };
+		const std::vector<int> ranks{ 8, 7, 6, 5, 4, 3, 2, 1 };
 		std::map<std::string, Piece*> mPieces {
-			{"wP1", new Pawn('A', 7, 'w')}, 
-			{"bP1", new Pawn('A', 2, 'b')}
+			{"wP1", new Pawn('A', 2, 'w')}, 
+			{"bP1", new Pawn('A', 7, 'b')},
+			{"wP2", new Pawn('B', 2, 'w')},
 		};
-		void print_empty();
-		void print_pieces();
+		void print_empty() const;
+		void print_pieces() const;
 	public:
 		Board();
-		void print();
+		void print() const;
 	};
 }

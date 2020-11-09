@@ -7,8 +7,8 @@ namespace TheRoyalFamily
         public Piece
     {  
     public:
-        Pawn(char rank, int file, char colour, char code = 'P');
+        Pawn(char file, int rank, char colour, char code = 'p');
         void move(char rank, int file);
-        void print();
+        void print() const;
     };
 }

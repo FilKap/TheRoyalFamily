@@ -10,7 +10,7 @@ using std::cout, std::endl;
 Board::Board() { }
 
 
-void Board::print_empty()
+void Board::print_empty() const
 {
 	for (auto i = 0; i < ranks.size(); i++) {
 		cout << ranks[i] << " ";
@@ -25,7 +25,7 @@ void Board::print_empty()
 }
 
 
-void Board::print_pieces()
+void Board::print_pieces() const
 {	
 	for (auto const &pair : mPieces)
 		pair.second->print();
@@ -33,7 +33,7 @@ void Board::print_pieces()
 
 
 
-void Board::print()
+void Board::print() const
 {
 	COORD c;
 	c.X = 0;
