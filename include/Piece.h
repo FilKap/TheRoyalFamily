@@ -20,9 +20,12 @@ namespace TheRoyalFamily
 		const char mColour{ };
 		const char mCode{ };		// to display on board
 	public:	
-		Piece(char file, int rank, char colour, char code) : mRank{ rank }, mFile{ file }, mColour{ colour }, mCode{ code } { }
-		int getRank() const { return mRank; }
-		char getFile() const { return mFile; } 
-		virtual ~Piece() { }
+		Piece(char file, int rank, char colour, char code);
+		int getRank() const;
+		char getFile() const;
+		void setRank(int rank);
+		void setFile(char file);
+		void print() const;
+		virtual ~Piece();
 	};
 }

@@ -1,14 +1,12 @@
 #include "Board.h"
-#include "Pawn.h"
+#include "Utility.h"
 #include <iostream>
-#include<windows.h>
 
 using namespace TheRoyalFamily;
 using std::cout, std::endl;
 
 
 Board::Board() { }
-
 
 void Board::print_empty() const
 {
@@ -24,22 +22,15 @@ void Board::print_empty() const
 		cout << i << " ";
 }
 
-
 void Board::print_pieces() const
 {	
-	for (auto const &pair : mPieces)
-		pair.second->print();
+	for (auto const& piece : mPieces)
+		piece->print();
 }
-
-
 
 void Board::print() const
 {
-	COORD c;
-	c.X = 0;
-	c.Y = 10;
-
-	Board::print_empty();
-	Board::print_pieces();
-	SetConsoleCursorPosition(GetStdHandle(STD_OUTPUT_HANDLE), c);
+	print_empty();
+	print_pieces();
+	Utility::SetCursorXY(0, 10);
 }

@@ -9,6 +9,5 @@ namespace TheRoyalFamily
     public:
         Pawn(char file, int rank, char colour, char code = 'p');
         void move(char rank, int file);
-        void print() const;
     };
 }

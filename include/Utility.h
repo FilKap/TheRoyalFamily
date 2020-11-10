@@ -3,8 +3,7 @@
 */
 
 #pragma once
-#include <string>
-#include <windows.h>
+#include "Piece.h"
 
 
 namespace TheRoyalFamily
@@ -12,20 +11,10 @@ namespace TheRoyalFamily
 	class Utility
 	{
 	public:
-		static void SetCursorPiece(const Piece* p)
-		{
-			COORD c;
-			c.X = (p->getFile() - 'A' + 1) * 2;
-			c.Y = 8 - p->getRank();
-			SetConsoleCursorPosition(GetStdHandle(STD_OUTPUT_HANDLE), c);
-		}
-		static void SetWhiteText(void)		// with aqua background
-		{
-			SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), 63);
-		}
-		static void SetBlackText(void)		// with aqua background
-		{
-			SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), 48);
-		}
+		static void SetCursorPiece(const Piece* p);
+		static void SetCursorXY(int x, int y);
+		static void SetWhiteText(void);		// with aqua background
+		static void SetBlackText(void);		// with aqua background
+		static void SetBackground(void);	// aqua backgorund
 	};
 }
