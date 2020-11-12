@@ -11,6 +11,14 @@ int Piece::getRank() const { return mRank; }
 
 char Piece::getFile() const { return mFile; }
 
+std::string Piece::getPos() const
+{
+	std::string pos;
+	pos.push_back(mFile);
+	pos.push_back(mRank + '0');
+	return pos;
+}
+
 void Piece::setRank(int rank) { mRank = rank; }
 
 void Piece::setFile(char file) { mFile = file; }

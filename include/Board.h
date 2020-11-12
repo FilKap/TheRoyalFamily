@@ -1,5 +1,6 @@
 #pragma once
 #include <vector>
+#include <string>
 #include "Piece.h"
 #include "Pawn.h"
 
@@ -22,5 +23,6 @@ namespace TheRoyalFamily
 	public:
 		Board();
 		void print() const;
+		void movePiece(std::string current_pos, std::string target_pos);
 	};
 }

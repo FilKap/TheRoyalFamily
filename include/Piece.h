@@ -1,11 +1,12 @@
 #pragma once
+#include <string>
 
 namespace TheRoyalFamily
 {
 	class iPiece
 	{
 	public:
-		virtual void move(char rank, int file) = 0;
+		virtual void move(std::string target_pos) = 0;
 		virtual void print() const = 0;
 		virtual ~iPiece() { }
 	};
@@ -23,6 +24,7 @@ namespace TheRoyalFamily
 		Piece(char file, int rank, char colour, char code);
 		int getRank() const;
 		char getFile() const;
+		std::string getPos() const;
 		void setRank(int rank);
 		void setFile(char file);
 		void print() const;
