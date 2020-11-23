@@ -1,10 +1,8 @@
-﻿/*	
-	Utility functions (like editing console)
-*/
-
-#pragma once
+﻿#pragma once
 #include "Piece.h"
 
+constexpr auto ComandLine_yPos = 10;
+constexpr auto ComandLine_xPos = 3;
 
 namespace TheRoyalFamily
 {
@@ -16,5 +14,7 @@ namespace TheRoyalFamily
 		static void SetWhiteText(void);		// with aqua background
 		static void SetBlackText(void);		// with aqua background
 		static void SetBackground(void);	// aqua backgorund
+		static void ClearCmdLine(void);	
+		static void PrintArrow(void);
 	};
 }

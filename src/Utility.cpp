@@ -1,5 +1,6 @@
 #include "Utility.h"
 #include <Windows.h>
+#include <iostream>
 
 using namespace TheRoyalFamily;
 
@@ -33,4 +34,17 @@ void Utility::SetBlackText(void)
 void Utility::SetBackground(void)
 {
 	system("Color 30");
+}
+
+void Utility::ClearCmdLine(void)
+{
+	Utility::SetCursorXY(ComandLine_xPos, ComandLine_yPos);
+	std::cout << "        ";
+	Utility::SetCursorXY(ComandLine_xPos, ComandLine_yPos);
+}
+
+void Utility::PrintArrow(void)
+{
+	Utility::SetCursorXY(ComandLine_xPos + 2, ComandLine_yPos);
+	std::cout << " -> ";
 }

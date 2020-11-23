@@ -7,7 +7,10 @@ using namespace TheRoyalFamily;
 using std::cout, std::endl;
 
 
-Board::Board() { }
+Board::Board() 
+{
+	print();
+}
 
 void Board::print_empty() const
 {
@@ -34,7 +37,7 @@ void Board::print() const
 {
 	print_empty();
 	print_pieces();
-	Utility::SetCursorXY(0, 10);
+	Utility::ClearCmdLine();
 }
 
 void Board::movePiece(std::string current_pos, std::string target_pos)
