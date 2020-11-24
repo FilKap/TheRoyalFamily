@@ -11,6 +11,8 @@ int Piece::getRank() const { return mRank; }
 
 char Piece::getFile() const { return mFile; }
 
+char Piece::getColour() const { return mColour; }
+
 std::string Piece::getPos() const
 {
 	std::string pos;

@@ -4,6 +4,7 @@
 #include "Piece.h"
 #include "Pawn.h"
 
+extern char turn;
 
 namespace TheRoyalFamily
 {
@@ -12,14 +13,28 @@ namespace TheRoyalFamily
 	private:
 		const std::vector<char> files{ 'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H' };
 		const std::vector<int> ranks{ 8, 7, 6, 5, 4, 3, 2, 1 };
-		std::vector<Piece*> mPieces {
-			new Pawn('A', 2, 'w'), 
+		std::vector<Piece*> mPieces{
+			new Pawn('A', 2, 'w'),
 			new Pawn('B', 2, 'w'),
 			new Pawn('C', 2, 'w'),
-			new Pawn('A', 7, 'b')
+			new Pawn('D', 2, 'w'),
+			new Pawn('E', 2, 'w'),
+			new Pawn('F', 2, 'w'),
+			new Pawn('G', 2, 'w'),
+			new Pawn('H', 2, 'w'),
+			new Pawn('A', 7, 'b'),
+			new Pawn('B', 7, 'b'),
+			new Pawn('C', 7, 'b'),
+			new Pawn('D', 7, 'b'),
+			new Pawn('E', 7, 'b'),
+			new Pawn('F', 7, 'b'),
+			new Pawn('G', 7, 'b'),
+			new Pawn('H', 7, 'b')
 		};
 		void print_empty() const;
 		void print_pieces() const;
+		bool isFreeSquare(std::string pos) const;
+		void capture(std::string pos);
 	public:
 		Board();
 		void print() const;
