@@ -33,7 +33,7 @@ void Board::print_pieces() const
 		piece->print();
 }
 
-bool Board::isFreeSquare(std::string pos) const
+bool Board::isFreeSquare(std::string pos) const		// USELESS
 {
 	for (const auto& piece : mPieces)
 	{
@@ -45,7 +45,11 @@ bool Board::isFreeSquare(std::string pos) const
 
 void Board::capture(std::string pos)	// remove Piece from pos
 {
-	auto x = std::remove_if(mPieces.begin(), mPieces.end(), [pos](Piece* piece) { return piece->getPos() == pos; });
+	auto x = std::remove_if(mPieces.begin(), mPieces.end(), [pos](Piece* piece) {
+		if (piece->getPos() == pos && piece->getColour() != turn)			// if piece is on pos and its got diffrent colour then capture
+			return true;
+		else
+			return false; });
 }
 
 void Board::print() const
@@ -60,22 +64,15 @@ void Board::movePiece(std::string current_pos, std::string target_pos)
 {
 	for (auto& piece : mPieces)
 	{
-		if (piece->getPos() == current_pos) 
+		if (piece->getPos() == current_pos)						// chosen piece
 		{	
-			if (piece->getColour() != turn)				// colour check
-				break;
-			else if (!isFreeSquare(target_pos)) {		// if square is busy
-				if (piece->canCapture(target_pos)) {	// try capture
-					capture(target_pos);
-					piece->simpleMove(target_pos);		// need edit
+			if (piece->getColour() == turn)						// colour check
+			{
+				if (piece->move(target_pos)) {					// try mvoe
+					capture(target_pos);						// try capture
+					turn = (turn == 'w') ? 'b' : 'w';
 					break;
 				}
-				else
-					break;
-			}
-			else {
-				piece->move(target_pos);				// try move
-				break;
 			}
 		}
 	}

@@ -48,3 +48,14 @@ void Utility::PrintArrow(void)
 	Utility::SetCursorXY(ComandLine_xPos + 2, ComandLine_yPos);
 	std::cout << " -> ";
 }
+
+bool Utility::IsOnBoard(std::string pos)
+{
+	char tFile = pos[0];         // tFile, tRank - target file, target rank
+	int tRank = pos[1] - '0';    // -'0' to get int from char
+	
+	if (tFile >= 'A' && tFile <= 'H' && tRank >= 1 && tRank <= 8)
+		return true;
+	else
+		return false;
+}

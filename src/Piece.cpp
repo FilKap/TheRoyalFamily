@@ -7,11 +7,11 @@ using namespace TheRoyalFamily;
 
 Piece::Piece(char file, int rank, char colour, char code) : mRank{ rank }, mFile{ file }, mColour{ colour }, mCode{ code } { }
 
+char Piece::getColour() const { return mColour; }
+
 int Piece::getRank() const { return mRank; }
 
 char Piece::getFile() const { return mFile; }
-
-char Piece::getColour() const { return mColour; }
 
 std::string Piece::getPos() const
 {
@@ -21,9 +21,11 @@ std::string Piece::getPos() const
 	return pos;
 }
 
-void Piece::setRank(int rank) { mRank = rank; }
-
-void Piece::setFile(char file) { mFile = file; }
+void Piece::setPos(int rank, char file)
+{
+	mRank = rank;
+	mFile = file;
+}
 
 void Piece::print() const
 {
