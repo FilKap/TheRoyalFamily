@@ -18,5 +18,6 @@ namespace TheRoyalFamily
 		static void ClearCmdLine(void);	
 		static void PrintArrow(void);
 		static bool IsOnBoard(std::string pos);
+		static std::string MovePos(std::string pos, int x, int y);		// move position string like "A1" on x and y value on board
 	};
 }

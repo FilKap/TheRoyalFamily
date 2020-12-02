@@ -59,3 +59,10 @@ bool Utility::IsOnBoard(std::string pos)
 	else
 		return false;
 }
+
+std::string Utility::MovePos(std::string pos, int x, int y)
+{
+	pos[0] += x;
+	pos[1] += y;
+	return pos;
+}
