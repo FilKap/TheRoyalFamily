@@ -13,10 +13,13 @@ char turn{ 'w' };
 int main()
 {
 	Utility::SetBackground();
-	Board board;
+
+	Board& board = Board::getBoard();
 
 	while (1)
 	{
+		board.print();
+
 		if (turn == 'w')
 			Utility::SetWhiteText();
 		else
@@ -28,10 +31,8 @@ int main()
 		Utility::PrintArrow();
 		cin >> target_pos;
 
-		board.movePiece(current_pos, target_pos);
-		board.print();
+		board.movePiece(current_pos, target_pos);		
 	}
-
 
 	return 0;
 }

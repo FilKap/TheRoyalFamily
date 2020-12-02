@@ -6,11 +6,10 @@
 using namespace TheRoyalFamily;
 using std::cout, std::endl;
 
+extern char turn;
 
-Board::Board() 
-{
-	print();
-}
+
+Board::Board() { }
 
 void Board::print_empty() const
 {
@@ -50,6 +49,12 @@ void Board::capture(std::string pos)	// remove Piece from pos
 			return true;
 		else
 			return false; });
+}
+
+Board& Board::getBoard()
+{
+	static Board board;
+	return board;
 }
 
 void Board::print() const

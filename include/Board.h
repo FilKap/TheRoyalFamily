@@ -4,13 +4,12 @@
 #include "Piece.h"
 #include "Pawn.h"
 
-extern char turn;
-
 namespace TheRoyalFamily
 {
 	class Board
 	{
 	private:
+		Board();
 		const std::vector<char> files{ 'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H' };
 		const std::vector<int> ranks{ 8, 7, 6, 5, 4, 3, 2, 1 };
 		std::vector<Piece*> mPieces{
@@ -36,7 +35,7 @@ namespace TheRoyalFamily
 		bool isFreeSquare(std::string pos) const;
 		void capture(std::string pos);
 	public:
-		Board();
+		static Board& getBoard();
 		void print() const;
 		void movePiece(std::string current_pos, std::string target_pos);
 	};
