@@ -32,11 +32,11 @@ namespace TheRoyalFamily
 		};
 		void print_empty() const;
 		void print_pieces() const;
-		bool isFreeSquare(std::string pos) const;
 		void capture(std::string pos);
 	public:
 		static Board& getBoard();
 		void print() const;
 		void movePiece(std::string current_pos, std::string target_pos);
+		bool isFree(std::string pos) const;
 	};
 }

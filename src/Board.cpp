@@ -32,16 +32,6 @@ void Board::print_pieces() const
 		piece->print();
 }
 
-bool Board::isFreeSquare(std::string pos) const		// USELESS
-{
-	for (const auto& piece : mPieces)
-	{
-		if (piece->getPos() == pos)
-			return false;
-	}
-	return true;
-}
-
 void Board::capture(std::string pos)	// remove Piece from pos
 {
 	auto x = std::remove_if(mPieces.begin(), mPieces.end(), [pos](Piece* piece) {
@@ -82,4 +72,13 @@ void Board::movePiece(std::string current_pos, std::string target_pos)
 		}
 	}
 }
-	
+
+bool Board::isFree(std::string pos) const
+{
+	for (const auto& piece : mPieces)
+	{
+		if (piece->getPos() == pos)
+			return false;
+	}
+	return true;
+}
