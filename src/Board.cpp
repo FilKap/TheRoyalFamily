@@ -82,3 +82,13 @@ bool Board::isFree(std::string pos) const
 	}
 	return true;
 }
+
+bool Board::isEnemy(std::string pos) const
+{
+	for (auto const& piece : mPieces)
+	{
+		if (piece->getPos() == pos && piece->getColour() != turn)
+			return true;
+	}
+	return false;
+}
