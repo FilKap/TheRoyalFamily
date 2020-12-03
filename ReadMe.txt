@@ -15,6 +15,3 @@ cmake ..
 
 
 
-Pawn doesn't have relation with other pieces.
-
-

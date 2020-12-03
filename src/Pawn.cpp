@@ -37,7 +37,8 @@ bool Pawn::move(std::string target_pos)
         }
 
         // capturing (one square diagonally)
-        else if ((tFile == mFile + 1 || tFile == mFile - 1) && tRank == mRank + 1 && Utility::IsOnBoard(target_pos))  // if tFile is one less or greater and tRank is one greater and target_pos is on board
+        else if ( (tFile == mFile + 1 || tFile == mFile - 1) && tRank == mRank + 1 &&   // if tFile is one less or greater and tRank is one greater
+                  !board.isFree(target_pos) )                                           // and there is a piece at target_pos
         {
             setPos(tRank, tFile);
             return true;
@@ -69,7 +70,8 @@ bool Pawn::move(std::string target_pos)
         }
 
         // capturing (one square diagonally)
-        else if ((tFile == mFile + 1 || tFile == mFile - 1) && tRank == mRank - 1 && Utility::IsOnBoard(target_pos))    // if tFile is one less or greater and tRank is one less and target_pos is on board
+        else if ( (tFile == mFile + 1 || tFile == mFile - 1) && tRank == mRank - 1 &&   // if tFile is one less or greater and tRank is one less
+                   !board.isFree(target_pos) )                                          // and there is a piece at target_pos
         {
             setPos(tRank, tFile);
             return true;
