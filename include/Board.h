@@ -3,6 +3,7 @@
 #include <string>
 #include "Piece.h"
 #include "Pawn.h"
+#include "Rook.h"
 
 namespace TheRoyalFamily
 {
@@ -28,7 +29,11 @@ namespace TheRoyalFamily
 			new Pawn('E', 7, 'b'),
 			new Pawn('F', 7, 'b'),
 			new Pawn('G', 7, 'b'),
-			new Pawn('H', 7, 'b')
+			new Pawn('H', 7, 'b'),
+			new Rook('A', 1, 'w'),
+			new Rook('H', 1, 'w'),
+			new Rook('A', 8, 'b'),
+			new Rook('H', 8, 'b')
 		};
 		void print_empty() const;
 		void print_pieces() const;
