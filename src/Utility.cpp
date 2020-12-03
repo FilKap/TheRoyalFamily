@@ -39,7 +39,12 @@ void Utility::SetBackground(void)
 void Utility::ClearCmdLine(void)
 {
 	Utility::SetCursorXY(ComandLine_xPos, ComandLine_yPos);
-	std::cout << "        ";
+	for (auto i = 0; i < 5; i++)
+	{
+		for (auto i = 0; i < 15; i++)
+			std::cout << " ";
+		std::cout << std::endl;
+	}
 	Utility::SetCursorXY(ComandLine_xPos, ComandLine_yPos);
 }
 
